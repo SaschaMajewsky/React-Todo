@@ -1,0 +1,21 @@
+.application {
+    margin-top: 10vh;
+    margin-left: 40vw;
+    margin-right: 48vw;
+}
+
+.header{
+    text-align: center;
+}
+
+.saveButton, .cleanButton {
+    width: 50%;
+}
+
+.inputForm {
+    width: 11.4rem;
+}
+
+.list {
+    padding-left: 50%;
+}
