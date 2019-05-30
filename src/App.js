@@ -7,7 +7,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-        tasks: [],
+        tasks: [{task: "Welcome", id: 0, completed: false}],
         taskText: '',
         id: '',
         completed: ''
@@ -18,9 +18,11 @@ componentDidMount() {
   const taskList = window.localStorage.getItem('savedTasks');
   const parsedTaskList = JSON.parse(taskList);
 
+  if(parsedTaskList){
       this.setState({
         tasks: parsedTaskList,
-      })
+      });
+  }
 }
 
 addTask = event => {
