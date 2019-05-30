@@ -1,18 +1,21 @@
 import React from "react";
 /* import '../Todo.css'; */
 
-const TodoForm = ({addTaskProperty, taskTextProperty, handleChangesProperty}) => (
-        <form onSubmit={addTaskProperty}>
+const TodoForm = ({addTaskProperty, taskTextProperty, handleChangesProperty, cleanUpProperty}) => (
+        <form onSubmit={addTaskProperty} autocomplete="off" className="todoForm">
             <input
                 type="text"
                 value={taskTextProperty}
                 name="todo"
                 onChange={handleChangesProperty}
                 placeholder="Add a task"
-                className="inputForm"
+                className="inputField"
+                
             />
+            <div className="buttonContainer">
             <input type="submit" value="Save" className="saveButton"></input>
-            <button type="submit" className="cleanButton">Clean Up</button>
+            <button onClick={cleanUpProperty} type="submit" className="cleanButton"></button>
+            </div>
         </form>
     )
 

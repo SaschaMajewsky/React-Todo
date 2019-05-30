@@ -29,20 +29,42 @@ event.preventDefault();
       id: '',
       completed: ''
   });
+ /*  console.log(newTask); */
 };
 
 handleChanges = event => this.setState({taskText: event.target.value});
+
+taskToggle = todoIndividual  => {
+  this.setState({
+    tasks: this.state.tasks.map(task => {
+      if(task.id === todoIndividual) {
+        return {...task, completed: !task.completed
+        };
+      }
+      return task;
+    })
+  });
+};
+
+cleanUp = event => {
+  event.preventDefault();
+  this.setState({
+    tasks: this.state.tasks.filter(task => !task.completed)})
+}
+
 
 // render
   render() {
     return (
       <div className="application">
         <h2 className="header">Todo App</h2>
-        <TodoList taskProperty={this.state.tasks}/>
+        <TodoList taskProperty={this.state.tasks}
+        taskToggleProperty={this.taskToggle}/>
         <TodoForm 
         taskTextProperty={this.state.taskText}
         addTaskProperty={this.addTask}
         handleChangesProperty={this.handleChanges}
+        cleanUpProperty={this.cleanUp}
         />
       </div>
     );
