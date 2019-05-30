@@ -14,6 +14,15 @@ class App extends React.Component {
     }
 }
 
+componentDidMount() {
+  const taskList = window.localStorage.getItem('savedTasks');
+  const parsedTaskList = JSON.parse(taskList);
+
+      this.setState({
+        tasks: parsedTaskList,
+      })
+}
+
 addTask = event => {
 event.preventDefault();
 
@@ -28,7 +37,9 @@ event.preventDefault();
       taskText: '',
       id: '',
       completed: ''
+  }, () => {window.localStorage.setItem('savedTasks', JSON.stringify(this.state.tasks))
   });
+
  /*  console.log(newTask); */
 };
 
@@ -43,28 +54,33 @@ taskToggle = todoIndividual  => {
       }
       return task;
     })
+  }, () => {window.localStorage.setItem('savedTasks', JSON.stringify(this.state.tasks))
   });
 };
 
 cleanUp = event => {
   event.preventDefault();
   this.setState({
-    tasks: this.state.tasks.filter(task => !task.completed)})
+    tasks: this.state.tasks.filter(task => !task.completed)
+  }, 
+  () => {
+    window.localStorage.setItem('savedTasks', JSON.stringify(this.state.tasks));
+  })
 }
-
 
 // render
   render() {
     return (
       <div className="application">
         <h2 className="header">Todo App</h2>
-        <TodoList taskProperty={this.state.tasks}
+        <TodoList tasksProperty={this.state.tasks}
         taskToggleProperty={this.taskToggle}/>
         <TodoForm 
         taskTextProperty={this.state.taskText}
         addTaskProperty={this.addTask}
         handleChangesProperty={this.handleChanges}
         cleanUpProperty={this.cleanUp}
+        tasksProperty={this.state.tasks}
         />
       </div>
     );

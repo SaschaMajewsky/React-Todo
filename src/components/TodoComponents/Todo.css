@@ -176,6 +176,7 @@ body{
     outline: none;
     background-image: linear-gradient(45deg, rgba(145, 145, 175, 0) 27.27%, rgba(145, 145, 175, 0.1) 27.27%, rgba(145, 145, 175, 0.1)  50%, rgba(145, 145, 175, 0) 50%, rgba(145, 145, 175, 0) 77.27%, rgba(145, 145, 175, 0.1)  77.27%, rgba(145, 145, 175, 0.1)  100%);
     background-size: 46.67px 46.67px;
+    margin-left: 2rem;
 }
 
 
@@ -192,6 +193,8 @@ body{
     background-image: url("../../assets/trash.png");
     background-repeat: no-repeat;
     background-position: center;
+    padding-left: 4.3rem;
+    color: white;
 }
 
 .saveButton:hover {

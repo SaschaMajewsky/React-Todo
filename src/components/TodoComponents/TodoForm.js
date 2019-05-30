@@ -1,8 +1,8 @@
 import React from "react";
 /* import '../Todo.css'; */
 
-const TodoForm = ({addTaskProperty, taskTextProperty, handleChangesProperty, cleanUpProperty}) => (
-        <form onSubmit={addTaskProperty} autocomplete="off" className="todoForm">
+const TodoForm = ({addTaskProperty, taskTextProperty, handleChangesProperty, cleanUpProperty, tasksProperty}) => (
+        <form onSubmit={addTaskProperty} autoComplete="off" className="todoForm">
             <input
                 type="text"
                 value={taskTextProperty}
@@ -10,11 +10,11 @@ const TodoForm = ({addTaskProperty, taskTextProperty, handleChangesProperty, cle
                 onChange={handleChangesProperty}
                 placeholder="Add a task"
                 className="inputField"
-                
+                required pattern=".{1,23}"
             />
             <div className="buttonContainer">
             <input type="submit" value="Save" className="saveButton"></input>
-            <button onClick={cleanUpProperty} type="submit" className="cleanButton"></button>
+            <button onClick={cleanUpProperty} type="submit" className="cleanButton">{tasksProperty.filter(task => task.completed).length}</button>
             </div>
         </form>
     )

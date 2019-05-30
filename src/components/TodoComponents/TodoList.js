@@ -1,9 +1,9 @@
 import React from "react";
 import Todo from './Todo';
 
-const TodoList = ({taskProperty, taskToggleProperty}) => (
+const TodoList = ({tasksProperty, taskToggleProperty}) => (
         <ul className="list">
-            {taskProperty.map( 
+            {tasksProperty.map( 
                 todo => <Todo todoProperty={todo} key={todo.id} toggleProperty={taskToggleProperty}/>
                 )
             }
