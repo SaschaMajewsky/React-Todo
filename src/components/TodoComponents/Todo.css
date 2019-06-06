@@ -1,0 +1,269 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+blockquote,
+q {
+	quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* ============================================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body{
+    background: rgb(50, 50, 61);
+}
+
+.application {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header{
+    font-size: 5rem;
+    color: rgb(67, 172, 53);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-family: sans-serif;
+    border: 7px solid rgba(190, 190, 190, 0.8);
+    padding: 0.7rem;
+    border-radius: 15px;
+}
+
+.saveButton{
+    width: 13rem;
+    border: 5px solid rgba(0, 128, 0, 0.6);
+    border-radius: 15px;
+    background: none;
+    color: white;
+    font-size: 1.5rem;
+    margin: 1rem;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    outline: none;
+    background-image: linear-gradient(45deg, rgba(145, 145, 175, 0) 27.27%, rgba(145, 145, 175, 0.1) 27.27%, rgba(145, 145, 175, 0.1)  50%, rgba(145, 145, 175, 0) 50%, rgba(145, 145, 175, 0) 77.27%, rgba(145, 145, 175, 0.1)  77.27%, rgba(145, 145, 175, 0.1)  100%);
+    background-size: 46.67px 46.67px;
+    margin-left: 2rem;
+}
+
+
+.cleanButton {
+    width: 4rem;
+    height: 3.5rem;
+    border: none;
+    font-size: 1.5rem;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    outline: none;
+    margin: 1rem;
+    background: none;
+    background-image: url("../../assets/trash.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-left: 4.3rem;
+    color: white;
+}
+
+.saveButton:hover {
+    background: rgba(0, 128, 0, 0.6);
+}
+
+.cleanButton:hover {
+    -webkit-transition: background-image transform 0.5s ease-in;
+    transition: background-image transform 0.5s ease-in;
+    background-image: url("../../assets/trash-open.png");
+}
+
+
+.buttonContainer{
+    display: flex;
+}
+
+.inputField {
+    background: none;
+    width: 18rem;
+    font-size: 1.2rem;
+    border: none;
+    border-bottom: 1px solid yellow;
+    text-align: center;
+    outline: none;
+    color: yellow;
+}
+
+.inputField::placeholder  {
+    color: yellow;
+}
+
+.inputField:focus::-webkit-input-placeholder {
+    opacity: 0;
+}
+
+.todoForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 23rem;
+    border: 1px solid rgba(190, 190, 190, 0.4);
+    border-radius: 5px;
+    padding-top: 1rem;
+}
+
+.todoElement {
+    list-style: none;
+    font-size: 1.2rem;
+    width: 23rem;
+    background: rgb(230, 217, 41);
+    color: black;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    margin: 1.2rem;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+.completed {
+    background: green;
+    color: white;
+}
